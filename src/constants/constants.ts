@@ -1,1 +1,1 @@
-export const constants = {};
+export const PLANE_SIZE = 1000;
