@@ -1,14 +1,22 @@
-import React, { useRef } from 'react';
+import React, { useLayoutEffect, useRef } from 'react';
 import { PLANE_SIZE } from '../constants';
 import { useTexture } from '@react-three/drei';
 
 import gridPurple from '../assets/textures/grid-purple.png';
-import { Color } from 'three';
+import { Color, RepeatWrapping } from 'three';
 
 const Ground: React.FC = () => {
   const plane = useRef();
   const texture = useTexture(gridPurple);
   const color = new Color(0x000000);
+
+  const TEXTURE_SIZE = PLANE_SIZE * 0.05;
+
+  useLayoutEffect(() => {
+    texture.wrapS = texture.wrapT = RepeatWrapping;
+    texture.repeat.set(TEXTURE_SIZE, TEXTURE_SIZE);
+    texture.anisotropy = 16;
+  }, [texture]);
 
   return (
     <mesh ref={plane} receiveShadow visible rotation={[-Math.PI / 2, 0, 0]}>
