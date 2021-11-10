@@ -12,7 +12,7 @@ const PlayerModel: React.FC = () => {
   useLayoutEffect(() => {
     // Ustawiamy kamerę w odpowiedniej pozycji
     camera.current.rotation.set(0, Math.PI, 0);
-    camera.current.position.set(0, 4, -9); // 0, 1.5, -8
+    camera.current.position.set(0, 4, 10); // 0, 1.5, -8
     camera.current.lookAt(
       v.set(
         player.current.position.x,
@@ -33,7 +33,7 @@ const PlayerModel: React.FC = () => {
         rotation={[0, Math.PI, 0]}
         position={[0, 10, -10]}
       />
-      <mesh ref={player} position={[0, 1, -2]}>
+      <mesh ref={player} position={[0, 1, 2]}>
         <boxGeometry args={[2, 2, 2]} />
         <meshStandardMaterial color="purple" />
       </mesh>

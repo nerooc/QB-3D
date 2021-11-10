@@ -1,5 +1,5 @@
 import { createRef, RefObject } from 'react';
-import { DirectionalLight, Camera } from 'three';
+import { DirectionalLight, Camera, Color } from 'three';
 import create from 'zustand';
 
 type Store = {
@@ -40,6 +40,8 @@ const useStore = create((set, get) => {
 const mutation = {
   gameOver: false,
   score: 0,
+  globalColor: new Color(),
+  gameSpeed: 0.0,
 };
 
 export { useStore, mutation };
