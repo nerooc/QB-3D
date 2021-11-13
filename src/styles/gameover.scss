@@ -1,0 +1,172 @@
+.gameover {
+  &__container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #141622cc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 300ms ease;
+    transition: background-color 1000ms ease;
+    z-index: 1000;
+  }
+
+  &__button {
+    background: none;
+    border-radius: 20px;
+    border: 0;
+    font-family: 'Road Rage', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+      Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
+      sans-serif;
+    font-size: 6rem;
+    color: #bb05cc;
+    text-shadow: 0 0 40px #bb05cc;
+
+    &:hover {
+      color: #fff;
+      cursor: pointer;
+    }
+  }
+
+  &__results {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+
+    &--text {
+      color: #bb05cc;
+      font-family: 'Commando', Inconsolata, monospace;
+      font-size: 12rem;
+      text-shadow: 0 0 10px #bb05cc;
+      margin: 0;
+      margin-bottom: 2rem;
+    }
+  }
+
+  &__scorecontainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    text-shadow: 0 0 20px #bb05cc;
+    margin-bottom: 2rem;
+
+    &--left {
+      margin-right: 10rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    &--right {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    &--title {
+      color: #bb05cc;
+      font-family: 'Road Rage', Inconsolata, monospace;
+      font-weight: 500;
+      font-size: 4rem;
+      text-align: center;
+      text-shadow: 0 0 40px #bb05cc;
+      margin: 0;
+      margin-bottom: 1rem;
+    }
+
+    &--score {
+      color: #eee;
+      font-family: 'Commando', Inconsolata, monospace;
+      font-size: 10rem;
+      font-weight: 500;
+      text-align: center;
+      text-shadow: 0 0 20px #bb05cc;
+      margin: 0;
+    }
+
+    &--highscore {
+      font-size: 3rem;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      padding-left: 2rem;
+      padding-right: 2rem;
+      color: #eee;
+      font-family: 'Commando', Inconsolata, monospace;
+      &-number {
+        color: #bb05cc;
+        margin-right: 1rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 992px), (max-height: 1080px) {
+  .gameover {
+    &__button {
+      font-size: 4rem;
+      text-shadow: 0 0 15px #bb05cc;
+    }
+
+    &__results {
+      font-size: 8rem;
+      text-shadow: 0 0 10px #bb05cc;
+    }
+
+    &__scorecontainer {
+      &--title {
+        font-size: 3rem;
+      }
+
+      &--score {
+        font-size: 6rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 600px), (max-height: 700px) {
+  .gameover {
+    &__button {
+      font-size: 3rem;
+      text-shadow: 0 0 15px #bb05cc;
+    }
+
+    &__results {
+      &--text {
+        font-size: 4rem;
+        text-shadow: 0 0 10px #bb05cc;
+        margin-bottom: 1rem;
+      }
+    }
+
+    &__scorecontainer {
+      flex-direction: column;
+      justify-content: center;
+
+      &--left {
+        margin-right: 0;
+        margin-bottom: 1rem;
+      }
+
+      &--title {
+        font-size: 2rem;
+        text-shadow: 0 0 5px #bb05cc;
+      }
+
+      &--score {
+        font-size: 4rem;
+        text-shadow: 0 0 10px #bb05cc;
+      }
+
+      &--highscore {
+        font-size: 2.5rem;
+      }
+    }
+  }
+}
