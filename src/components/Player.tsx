@@ -29,7 +29,7 @@ const PlayerModel: React.FC = () => {
   useLayoutEffect(() => {
     // We set up the camera in the correct position
     camera.current.rotation.set(0, Math.PI, 0);
-    camera.current.position.set(0, 4, 10);
+    camera.current.position.set(0, 2, 20);
     camera.current.lookAt(
       v.set(
         player.current.position.x,

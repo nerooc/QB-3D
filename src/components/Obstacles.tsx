@@ -23,7 +23,6 @@ const Obstacles: React.FC = () => {
   const material: any = useRef();
 
   const player = useStore((s: any) => s.player);
-
   const dummy = useMemo(() => new Object3D(), []);
 
   const cubes = useMemo(() => {
@@ -32,7 +31,7 @@ const Obstacles: React.FC = () => {
     for (let i = 0; i < CUBE_AMOUNT; i++) {
       const x = randomInRange(negativeBound, positiveBound);
       const y = 10;
-      const z = -500 + randomInRange(-400, 10000);
+      const z = -500 + randomInRange(-400, 50000);
 
       temp.push({ x, y, z });
     }
